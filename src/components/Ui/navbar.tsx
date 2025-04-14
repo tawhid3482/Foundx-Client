@@ -12,10 +12,10 @@ import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 
-import { siteConfig } from "../config/site";
 
-import { ThemeSwitch } from "@/src/components/theme-switch";
+import { ThemeSwitch } from "@/src/components/Ui/theme-switch";
 import { SearchIcon, Logo } from "@/src/components/icons";
+import { siteConfig } from "@/src/config/site";
 
 export const Navbar = () => {
   return (

@@ -7,8 +7,6 @@ import { siteConfig } from "../config/site";
 
 import { fontSans } from "@/src/config/fonts";
 
-import { Navbar } from "../components/navbar";
-
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
