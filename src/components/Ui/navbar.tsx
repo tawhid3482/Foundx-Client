@@ -12,10 +12,11 @@ import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 
-
 import { ThemeSwitch } from "@/src/components/Ui/theme-switch";
 import { SearchIcon, Logo } from "@/src/components/icons";
 import { siteConfig } from "@/src/config/site";
+import { Avatar } from "@heroui/avatar";
+import NavbarDropDown from "./NavbarDropDown";
 
 export const Navbar = () => {
   return (
@@ -51,6 +52,9 @@ export const Navbar = () => {
       >
         <NavbarItem className="hidden sm:flex gap-2">
           <ThemeSwitch />
+        </NavbarItem>
+        <NavbarItem className="hidden sm:flex gap-2">
+          <NavbarDropDown />
         </NavbarItem>
       </NavbarContent>
 
