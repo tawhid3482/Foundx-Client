@@ -2,6 +2,7 @@
 
 import FXForm from "@/src/components/form/FxForm";
 import FxInput from "@/src/components/form/FxInput";
+import { useUserRegistration } from "@/src/hooks/auth.hook";
 // import { useUserRegistration } from "@/src/hooks/auth.hook";
 import registerValidationSchema from "@/src/schemas/register.schema";
 import { Button } from "@heroui/button";
