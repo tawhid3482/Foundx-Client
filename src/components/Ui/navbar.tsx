@@ -13,9 +13,8 @@ import NextLink from "next/link";
 import clsx from "clsx";
 
 import { ThemeSwitch } from "@/src/components/Ui/theme-switch";
-import { SearchIcon, Logo } from "@/src/components/icons";
+import { Logo } from "@/src/components/icons";
 import { siteConfig } from "@/src/config/site";
-import { Avatar } from "@heroui/avatar";
 import NavbarDropDown from "./NavbarDropDown";
 
 export const Navbar = () => {

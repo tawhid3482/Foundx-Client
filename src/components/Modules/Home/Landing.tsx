@@ -13,7 +13,7 @@ const Landing = () => {
             }}
             placeholder="Searching"
             size="lg"
-            startContent={<SearchIcon classNama="pointer-events-none" />}
+            startContent={<SearchIcon className="pointer-events-none" />}
             type="text"
           />
         </form>
