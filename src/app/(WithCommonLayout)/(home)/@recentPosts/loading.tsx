@@ -2,7 +2,6 @@
 /* eslint-disable react/self-closing-comp */
 import CardSkeleton from "@/src/components/Ui/CardSkeleton";
 import { Button } from "@heroui/button";
-import { CalendarDays } from "lucide-react";
 import Link from "next/link";
 
 const RecentPost = async () => {

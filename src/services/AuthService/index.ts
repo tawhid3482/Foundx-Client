@@ -35,9 +35,10 @@ export const loginUser = async (userData: FieldValues) => {
   }
 };
 
-export const logout = () => {
-  cookies().delete("accessToken");
-  cookies().delete("refreshToken");
+export const logout = async () => {
+  const cookieStore = await cookies();
+  cookieStore.delete("accessToken");
+  cookieStore.delete("refreshToken");
 };
 
 export const getCurrentUser = async () => {

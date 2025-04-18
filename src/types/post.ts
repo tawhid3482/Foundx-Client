@@ -27,7 +27,7 @@ export interface Category {
   __v: number;
 }
 
-export interface User {
+export interface IUser {
   _id: string;
   name: string;
   role: string;
@@ -35,7 +35,7 @@ export interface User {
   status: string;
   mobileNumber: string;
   profilePhoto: string;
-  createdAt: string;
-  updatedAt: string;
-  __v: number;
+  createdAt?: string;
+  updatedAt?: string;
+  __v?: number;
 }

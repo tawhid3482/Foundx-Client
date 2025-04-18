@@ -1,3 +1,4 @@
+"use client"
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -16,8 +17,10 @@ import { ThemeSwitch } from "@/src/components/Ui/theme-switch";
 import { Logo } from "@/src/components/icons";
 import { siteConfig } from "@/src/config/site";
 import NavbarDropDown from "./NavbarDropDown";
+import { useUser } from "@/src/context/user.provider";
 
 export const Navbar = () => {
+  const { user } = useUser();
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -52,9 +55,15 @@ export const Navbar = () => {
         <NavbarItem className="hidden sm:flex gap-2">
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden sm:flex gap-2">
-          <NavbarDropDown />
-        </NavbarItem>
+        {user?.email ? (
+          <NavbarItem className="hidden sm:flex gap-2">
+            <NavbarDropDown />
+          </NavbarItem>
+        ) : (
+          <NavbarItem className="hidden sm:flex gap-2">
+            <Link href="/login">Login</Link>
+          </NavbarItem>
+        )}
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">

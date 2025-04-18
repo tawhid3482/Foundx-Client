@@ -7,26 +7,35 @@ import {
 } from "@heroui/dropdown";
 import { Avatar } from "@heroui/avatar";
 import { useRouter } from "next/navigation";
+import { logout } from "@/src/services/AuthService";
+import { useUser } from "@/src/context/user.provider";
 const NavbarDropDown = () => {
   const route = useRouter();
   const handleNavigation = (pathName: string) => {
     route.push(pathName);
   };
+
+  const {user, setIsLoading: userLoading } = useUser();
+  const handleLogout = () => {
+    logout();
+    userLoading(true);
+  };
+
   return (
     <div>
       <Dropdown>
         <DropdownTrigger>
-          <Avatar className="cursor-pointer" name="Saikat" />
+          <Avatar className="cursor-pointer" src={user?.profilePhoto} />
         </DropdownTrigger>
         <DropdownMenu aria-label="Static Actions">
           <DropdownItem
-            key="about"
+            key="profile"
             onClick={() => handleNavigation("/profile")}
           >
             Profile
           </DropdownItem>
           <DropdownItem
-            key="about"
+            key="profile-about"
             onClick={() => handleNavigation("/profile/about")}
           >
             About
@@ -42,6 +51,9 @@ const NavbarDropDown = () => {
             key="about-duplicate"
           >
             Claims
+          </DropdownItem>
+          <DropdownItem onClick={() => handleLogout()} key="logout">
+            Logout
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
