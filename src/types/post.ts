@@ -1,4 +1,10 @@
-export interface TPost {
+import { SVGProps } from "react";
+
+export type IconSvgProps = SVGProps<SVGSVGElement> & {
+  size?: number;
+};
+
+export interface IPost {
   _id: string;
   title: string;
   description: string;
@@ -9,15 +15,15 @@ export interface TPost {
   status: string;
   isReported: boolean;
   reportCount: number;
-  category: Category;
-  user: User;
+  category: ICategory;
+  user: IUser;
   questions: string[];
   createdAt: string;
   updatedAt: string;
   __v: number;
 }
 
-export interface Category {
+export interface ICategory {
   _id: string;
   name: string;
   postCount: number;
@@ -38,4 +44,14 @@ export interface IUser {
   createdAt?: string;
   updatedAt?: string;
   __v?: number;
+}
+
+export interface IInput {
+  variant?: "flat" | "bordered" | "faded" | "underlined";
+  size?: "sm" | "md" | "lg";
+  required?: boolean;
+  type?: string;
+  label: string;
+  name: string;
+  disabled?: boolean;
 }

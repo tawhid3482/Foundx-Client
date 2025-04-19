@@ -43,14 +43,14 @@ const LoginPage = () => {
         <p className="mb-4">Welcome Back! Let&lsquo;s Get Started</p>
         <div className="w-[35%]">
           <FXForm
-            onSubmit={onSubmit}
             resolver={zodResolver(loginValidationSchema)}
+            onSubmit={onSubmit}
           >
             <div className="py-3">
-              <FxInput name="email" label="Email" type="email" />
+              <FxInput label="Email" name="email" type="email" />
             </div>
             <div className="py-3">
-              <FxInput name="password" label="Password" type="password" />
+              <FxInput label="Password" name="password" type="password" />
             </div>
 
             <Button

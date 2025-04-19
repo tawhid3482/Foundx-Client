@@ -1,5 +1,5 @@
 const FoundItems = () => {
-  return <div></div>;
+  return <div />;
 };
 
 export default FoundItems;

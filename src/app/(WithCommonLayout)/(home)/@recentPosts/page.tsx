@@ -26,11 +26,11 @@ const RecentPost = async () => {
             <div className="flex items-center justify-between text-sm text-gray-500">
               <div className="flex items-center gap-2">
                 <img
+                  alt={post.title}
+                  className=""
                   src={
                     Array.isArray(post.images) ? post.images[0] : post.images
                   }
-                  alt={post.title}
-                  className=""
                 />
                 <span>{post.author || "Unknown"}</span>
               </div>

@@ -6,19 +6,25 @@ import {
   DropdownTrigger,
 } from "@heroui/dropdown";
 import { Avatar } from "@heroui/avatar";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { logout } from "@/src/services/AuthService";
 import { useUser } from "@/src/context/user.provider";
+import { protectedRoutes } from "@/src/constant";
 const NavbarDropDown = () => {
   const route = useRouter();
   const handleNavigation = (pathName: string) => {
     route.push(pathName);
   };
 
-  const {user, setIsLoading: userLoading } = useUser();
+  const { user, setIsLoading: userLoading } = useUser();
+  const pathname = usePathname();
   const handleLogout = () => {
     logout();
     userLoading(true);
+
+    if (protectedRoutes.some((route) => pathname.match(route))) {
+      route.push('/')
+    }
   };
 
   return (
@@ -41,18 +47,18 @@ const NavbarDropDown = () => {
             About
           </DropdownItem>
           <DropdownItem
-            onClick={() => handleNavigation("/profile/create-post")}
             key="create-post"
+            onClick={() => handleNavigation("/profile/create-post")}
           >
             Create-Post
           </DropdownItem>
           <DropdownItem
-            onClick={() => handleNavigation("/profile/claim-requests")}
             key="about-duplicate"
+            onClick={() => handleNavigation("/profile/claim-requests")}
           >
             Claims
           </DropdownItem>
-          <DropdownItem onClick={() => handleLogout()} key="logout">
+          <DropdownItem key="logout" onClick={() => handleLogout()}>
             Logout
           </DropdownItem>
         </DropdownMenu>
