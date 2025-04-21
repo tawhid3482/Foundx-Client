@@ -1,7 +1,6 @@
 "use server";
 
-import axiosInstance from "@/src/lib/axiosInstance";
-
+import axiosInstance from "@/src/lib/AxiosInstance";
 
 export const getCategories = async () => {
   try {

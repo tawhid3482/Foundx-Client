@@ -1,7 +1,7 @@
-import { IInput } from "@/src/types/post";
-import { Select, SelectItem } from "@heroui/select";
+import { Select, SelectItem } from "@nextui-org/select";
 import { useFormContext } from "react-hook-form";
 
+import { IInput } from "@/src/types";
 
 interface IProps extends IInput {
   options: {

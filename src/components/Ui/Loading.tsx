@@ -1,12 +1,9 @@
-import { Spinner } from '@heroui/spinner';
-import React from 'react';
+import { Spinner } from "@nextui-org/spinner";
 
-const Loading = () => {
-    return (
-        <div className="h-screen bg-black-400/20 inset-0 z-[999] fixed backdrop-blur-md flex justify-center items-center">
+export default function Loading() {
+  return (
+    <div className="h-screen bg-black/10 fixed inset-0 z-[999] backdrop-blur-md flex justify-center items-center">
       <Spinner size="lg" />
-      </div>
-    );
-};
-
-export default Loading;
+    </div>
+  );
+}

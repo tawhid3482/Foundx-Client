@@ -1,8 +1,9 @@
-import Sidebar from "@/src/components/Sidebar";
-import Container from "@/src/components/Ui/Container";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
-const layout = ({ children }: { children: ReactNode }) => {
+import Container from "@/src/components/UI/Container";
+import Sidebar from "@/src/components/UI/Sidebar";
+
+export default function layout({ children }: { children: ReactNode }) {
   return (
     <Container>
       <div className="my-3 flex w-full gap-12">
@@ -13,6 +14,4 @@ const layout = ({ children }: { children: ReactNode }) => {
       </div>
     </Container>
   );
-};
-
-export default layout;
+}

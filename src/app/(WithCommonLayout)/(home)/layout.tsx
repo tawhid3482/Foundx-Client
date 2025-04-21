@@ -1,18 +1,16 @@
 import { ReactNode } from "react";
 
-const layout = ({
+export default function layout({
   children,
   recentPosts,
 }: {
   children: ReactNode;
   recentPosts: ReactNode;
-}) => {
+}) {
   return (
     <>
       {children}
       {recentPosts}
     </>
   );
-};
-
-export default layout;
+}

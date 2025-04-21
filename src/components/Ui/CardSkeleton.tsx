@@ -1,5 +1,5 @@
-import { Card as NextUiCard } from "@heroui/card";
-import { Skeleton } from "@heroui/skeleton";
+import { Card as NextUiCard } from "@nextui-org/card";
+import { Skeleton } from "@nextui-org/skeleton";
 
 const CardSkeleton = () => {
   return (

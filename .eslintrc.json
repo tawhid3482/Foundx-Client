@@ -9,8 +9,7 @@
     "plugin:react/recommended",
     "plugin:prettier/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:@next/next/recommended"
+    "plugin:jsx-a11y/recommended"
   ],
   "plugins": [
     "react",
@@ -45,7 +44,7 @@
     "unused-imports/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "warn",
     "@typescript-eslint/no-unused-vars": [
-      "off",
+      "warn",
       {
         "args": "after-used",
         "ignoreRestSiblings": false,
@@ -53,7 +52,7 @@
       }
     ],
     "import/order": [
-      "off",
+      "warn",
       {
         "groups": [
           "type",
@@ -86,7 +85,7 @@
       }
     ],
     "padding-line-between-statements": [
-      "off",
+      "warn",
       { "blankLine": "always", "prev": "*", "next": "return" },
       { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
       {

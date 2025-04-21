@@ -1,13 +1,11 @@
-/* eslint-disable import/order */
-import "../styles/globals.css";
+import "@/src/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 
-import { siteConfig } from "../config/site";
-
-import { fontSans } from "@/src/config/fonts";
 import { Providers } from "../lib/Providers";
 
+import { siteConfig } from "@/src/config/site";
+import { fontSans } from "@/src/config/fonts";
 
 export const metadata: Metadata = {
   title: {

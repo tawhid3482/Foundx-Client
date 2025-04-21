@@ -1,33 +1,39 @@
-"use client"
+"use client";
+
 import {
-  Navbar as HeroUINavbar,
+  Navbar as NextUINavbar,
   NavbarContent,
   NavbarMenu,
   NavbarMenuToggle,
   NavbarBrand,
   NavbarItem,
   NavbarMenuItem,
-} from "@heroui/navbar";
-import { Link } from "@heroui/link";
-import { link as linkStyles } from "@heroui/theme";
+} from "@nextui-org/navbar";
+import { Link } from "@nextui-org/link";
+import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
+import { Button } from "@nextui-org/button";
+import { useRouter } from "next/navigation";
 
-import { ThemeSwitch } from "@/src/components/Ui/theme-switch";
-import { Logo } from "@/src/assets/icons";
+import NavbarDropdown from "./NavbarDropdown";
+
 import { siteConfig } from "@/src/config/site";
-import NavbarDropDown from "./NavbarDropDown";
+import { ThemeSwitch } from "@/src/components/UI/theme-switch";
 import { useUser } from "@/src/context/user.provider";
+import { Logo } from "@/src/assets/icons";
 
 export const Navbar = () => {
-  const { user } = useUser();
+  const { user, isLoading } = useUser();
+  const router = useRouter();
+
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
+    <NextUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+            <p className="font-bold text-inherit">FoundX</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -57,11 +63,11 @@ export const Navbar = () => {
         </NavbarItem>
         {user?.email ? (
           <NavbarItem className="hidden sm:flex gap-2">
-            <NavbarDropDown />
+            <NavbarDropdown />
           </NavbarItem>
         ) : (
           <NavbarItem className="hidden sm:flex gap-2">
-            <Link href="/login">Login</Link>
+            <Button onClick={() => router.push("/login")}>Login</Button>
           </NavbarItem>
         )}
       </NavbarContent>
@@ -92,6 +98,6 @@ export const Navbar = () => {
           ))}
         </div>
       </NavbarMenu>
-    </HeroUINavbar>
+    </NextUINavbar>
   );
 };

@@ -1,7 +1,7 @@
-import React from "react";
-
-const loading = () => {
-  return <div>Global loading.........</div>;
-};
-
-export default loading;
+export default function loading() {
+  return (
+    <div>
+      <h1> Global Loading.... </h1>
+    </div>
+  );
+}

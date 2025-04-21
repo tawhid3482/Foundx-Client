@@ -1,7 +1,7 @@
-import { IInput } from "@/src/types/post";
-import { Textarea } from "@heroui/input";
-import { useFormContext } from "react-hook-form";
+import { Textarea } from "@nextui-org/input";
+import { useFormContext, useWatch } from "react-hook-form";
 
+import { IInput } from "@/src/types";
 
 interface IProps extends IInput {
   type?: string;
@@ -17,7 +17,15 @@ export default function FXTextarea({
     formState: { errors },
   } = useFormContext();
 
+  const currentValue = useWatch({ name });
+
   return (
-    <Textarea {...register(name)} label={label} minRows={6} variant={variant} />
+    <Textarea
+      {...register(name)}
+      label={label}
+      minRows={6}
+      variant={variant}
+      value={currentValue || ""}
+    />
   );
 }

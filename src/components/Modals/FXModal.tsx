@@ -1,11 +1,11 @@
-import { Button } from "@heroui/button";
+import { Button } from "@nextui-org/button";
 import {
   Modal,
   ModalContent,
   ModalHeader,
   ModalBody,
   useDisclosure,
-} from "@heroui/modal";
+} from "@nextui-org/modal";
 import { ReactNode } from "react";
 
 interface IProps {
